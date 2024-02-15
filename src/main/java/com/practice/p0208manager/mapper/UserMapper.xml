@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.practice.p0208manager.mapper.UserMapper">
     <select id="getUserByUserName" parameterType="string" resultType="com.practice.p0208manager.bean.User">
-        select tui.login_id,user_name,password,address,tel from t_userdetailinfo tui inner join t_userinfo tu on tui.login_id = tu.login_id where user_name=#{userName}
+        select tui.login_id,user_name,password,address,tel
+        from t_userdetailinfo tui
+                 inner join t_userinfo tu on tui.login_id = tu.login_id
+        where user_name = #{userName}
     </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.practice.p0208manager.service;
 
 import com.practice.p0208manager.bean.User;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface UserService {
     /**
@@ -10,4 +11,6 @@ public interface UserService {
      * @return　ユーザオブジェクトまたはnull
      */
     User login(String userName, String password);
+
+
 }
