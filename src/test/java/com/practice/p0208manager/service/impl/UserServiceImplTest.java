@@ -2,7 +2,6 @@ package com.practice.p0208manager.service.impl;
 
 import com.practice.p0208manager.bean.User;
 import com.practice.p0208manager.mapper.UserMapper;
-import com.practice.p0208manager.service.impl.UserServiceImpl;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
 
 
 class UserServiceImplTest {
