@@ -3,10 +3,13 @@ package com.practice.p0208manager.service.impl;
 import com.practice.p0208manager.bean.User;
 import com.practice.p0208manager.mapper.UserMapper;
 import com.practice.p0208manager.service.UserService;
+import com.practice.p0208manager.vo.Limits;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -30,5 +33,14 @@ public class UserServiceImpl implements UserService {
         }
 //        user.setPassword(null);
         return user;
+    }
+
+    @Override
+    public List<User> showUser(Limits limits) {
+        List<User> list =userMapper.getUserByLimits(limits);
+        if (list==null){
+            throw new RuntimeException("ユーザは存在しません。");
+        }
+        return list;
     }
 }

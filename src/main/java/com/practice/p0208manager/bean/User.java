@@ -9,14 +9,15 @@ import java.util.Date;
 public class User {
     private Integer loginId;
     private String userName;
+    private String roleName;
     private String password;
     private String address;
     private Integer tel;
     private Integer userRoleCode;
-    private Date valid_period_start;
-    private Date valid_period_end;
-    private Date registration_date;
-    private Date update_date;
+    private Date validPeriodStart;
+    private Date validPeriodEnd;
+    private Date registrationDate;
+    private Date updateDate;
 
     public Integer getLoginId() {
         return loginId;
@@ -32,6 +33,14 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public String getPassword() {
@@ -66,36 +75,36 @@ public class User {
         this.userRoleCode = userRoleCode;
     }
 
-    public Date getValid_period_start() {
-        return valid_period_start;
+    public Date getValidPeriodStart() {
+        return validPeriodStart;
     }
 
-    public void setValid_period_start(Date valid_period_start) {
-        this.valid_period_start = valid_period_start;
+    public void setValidPeriodStart(Date validPeriodStart) {
+        this.validPeriodStart = validPeriodStart;
     }
 
-    public Date getValid_period_end() {
-        return valid_period_end;
+    public Date getValidPeriodEnd() {
+        return validPeriodEnd;
     }
 
-    public void setValid_period_end(Date valid_period_end) {
-        this.valid_period_end = valid_period_end;
+    public void setValidPeriodEnd(Date validPeriodEnd) {
+        this.validPeriodEnd = validPeriodEnd;
     }
 
-    public Date getRegistration_date() {
-        return registration_date;
+    public Date getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegistration_date(Date registration_date) {
-        this.registration_date = registration_date;
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public Date getUpdate_date() {
-        return update_date;
+    public Date getUpdateDate() {
+        return updateDate;
     }
 
-    public void setUpdate_date(Date update_date) {
-        this.update_date = update_date;
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 
     @Override
@@ -103,14 +112,15 @@ public class User {
         return "User{" +
                 "loginId=" + loginId +
                 ", userName='" + userName + '\'' +
+                ", roleName='" + roleName + '\'' +
                 ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 ", tel=" + tel +
                 ", userRoleCode=" + userRoleCode +
-                ", valid_period_start=" + valid_period_start +
-                ", valid_period_end=" + valid_period_end +
-                ", registration_date=" + registration_date +
-                ", update_date=" + update_date +
+                ", validPeriodStart=" + validPeriodStart +
+                ", validPeriodEnd=" + validPeriodEnd +
+                ", registrationDate=" + registrationDate +
+                ", updateDate=" + updateDate +
                 '}';
     }
 }

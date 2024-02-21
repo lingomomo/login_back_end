@@ -5,6 +5,26 @@
         select tui.login_id,user_name,password,address,tel
         from t_userdetailinfo tui
                  inner join t_userinfo tu on tui.login_id = tu.login_id
-        where user_name = #{userName}
+        where tui.user_name = #{userName}
+    </select>
+    <select id="getUserByLimits" resultType="com.practice.p0208manager.bean.User" >
+        select tui.login_id,user_name,role_name,address,tel,valid_period_end,tui.registration_date
+        from t_userdetailinfo tui inner join t_userinfo tu on tui.login_id = tu.login_id
+            inner join t_useraddress t on tui.login_id = t.login_id
+            inner join t_codemaster tc on tui.user_role_code = tc.user_role_code
+<!--<where>-->
+<!--    <if test="limits.loginId!=null and limits.loginId!=''">-->
+<!--        AND tui.login_id=#{limits.loginId}-->
+<!--    </if>-->
+<!--    <if test="limits.roleName!=null and limits.roleName!=''">-->
+<!--        AND role_name like "%${limits.roleName}%"-->
+<!--    </if>-->
+<!--    <if test="limits.validPeriodStart!=null">-->
+<!--        AND registration_date &gt; #{limits.validPeriodStart}-->
+<!--    </if>-->
+<!--    <if test="limits.validPeriodEnd!=null">-->
+<!--        AND registration_date &lt; #{limits.validPeriodEnd}-->
+<!--    </if>-->
+<!--</where>-->
     </select>
 </mapper>
