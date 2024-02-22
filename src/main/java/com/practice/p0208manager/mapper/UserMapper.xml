@@ -2,15 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.practice.p0208manager.mapper.UserMapper">
     <select id="getUserByUserName" parameterType="string" resultType="com.practice.p0208manager.bean.User">
-        select tui.login_id,user_name,password,address,tel
+        select tui.login_id,user_name,password
         from t_userdetailinfo tui
                  inner join t_userinfo tu on tui.login_id = tu.login_id
         where tui.user_name = #{userName}
     </select>
     <select id="getUserByLimits" resultType="com.practice.p0208manager.bean.User" >
-        select tui.login_id,user_name,role_name,address,tel,valid_period_end,tui.registration_date
-        from t_userdetailinfo tui inner join t_userinfo tu on tui.login_id = tu.login_id
-            inner join t_useraddress t on tui.login_id = t.login_id
+        select tui.login_id,user_name,role_name,tui.address,tel,valid_period_end,tui.registration_date
+        from t_useraddress ta right join t_userdetailinfo tui on ta.address = tui.address inner join t_userinfo tu on tui.login_id = tu.login_id
             inner join t_codemaster tc on tui.user_role_code = tc.user_role_code
 <!--<where>-->
 <!--    <if test="limits.loginId!=null and limits.loginId!=''">-->
