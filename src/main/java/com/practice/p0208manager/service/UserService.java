@@ -16,7 +16,7 @@ public interface UserService {
 
     /**
      * 入力された項目によって、ユーザ情報を検索する。
-     * @param limits　入力された項目
+     * @param limits
      * @return　ユーザ情報コレクション
      */
     List<User> showUser(Limits limits);

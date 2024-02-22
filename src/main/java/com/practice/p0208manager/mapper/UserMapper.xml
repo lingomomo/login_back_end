@@ -2,28 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.practice.p0208manager.mapper.UserMapper">
     <select id="getUserByUserName" parameterType="string" resultType="com.practice.p0208manager.bean.User">
-        select tui.login_id,user_name,password
+        select tui.login_id, user_name, password
         from t_userdetailinfo tui
                  inner join t_userinfo tu on tui.login_id = tu.login_id
         where tui.user_name = #{userName}
     </select>
-    <select id="getUserByLimits" resultType="com.practice.p0208manager.bean.User" >
-        select tui.login_id,user_name,role_name,tui.address,tel,valid_period_end,tui.registration_date
-        from t_useraddress ta right join t_userdetailinfo tui on ta.address = tui.address inner join t_userinfo tu on tui.login_id = tu.login_id
-            inner join t_codemaster tc on tui.user_role_code = tc.user_role_code
-<!--<where>-->
-<!--    <if test="limits.loginId!=null and limits.loginId!=''">-->
-<!--        AND tui.login_id=#{limits.loginId}-->
-<!--    </if>-->
-<!--    <if test="limits.roleName!=null and limits.roleName!=''">-->
-<!--        AND role_name like "%${limits.roleName}%"-->
-<!--    </if>-->
-<!--    <if test="limits.validPeriodStart!=null">-->
-<!--        AND registration_date &gt; #{limits.validPeriodStart}-->
-<!--    </if>-->
-<!--    <if test="limits.validPeriodEnd!=null">-->
-<!--        AND registration_date &lt; #{limits.validPeriodEnd}-->
-<!--    </if>-->
-<!--</where>-->
+
+
+    <select id="getUser" resultType="com.practice.p0208manager.bean.User">
+        select
+            tui.login_id,
+            tui.user_name,
+            tc.role_name,
+            tui.address,
+            tui.tel,
+            tu.valid_period_end,
+            tui.registration_date
+        from
+            t_useraddress ta inner join
+                t_userdetailinfo tui on ta.address = tui.address
+                inner join t_userinfo tu on tui.login_id = tu.login_id
+                  inner join
+                t_codemaster tc on tui.user_role_code = tc.user_role_code
+
+<where>
+            <if test="loginId!=null and loginId!=''  ">
+                AND tui.login_id=#{loginId}
+            </if>
+            <if test="roleName!=null and roleName!=''">
+                AND tc.role_name like "%${roleName}%"
+            </if>
+            <if test="validPeriodStart!=null">
+                AND tu.valid_period_end &gt; #{validPeriodStart}
+            </if>
+            <if test="validPeriodEnd!=null">
+                AND tu.valid_period_end &lt; #{validPeriodEnd}
+            </if>
+            <if test="addressId!=null and addressId!=0">
+                AND ta.address_id = #{addressId}
+            </if>
+        </where>
     </select>
 </mapper>

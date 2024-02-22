@@ -7,7 +7,7 @@ public class Limits {
     private String roleName;
     private Date validPeriodStart;
     private Date validPeriodEnd;
-    private String title;
+    private int addressId;
 
     public int getLoginId() {
         return loginId;
@@ -41,12 +41,12 @@ public class Limits {
         this.validPeriodEnd = validPeriodEnd;
     }
 
-    public String getTitle() {
-        return title;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Limits {
                 ", roleName='" + roleName + '\'' +
                 ", validPeriodStart=" + validPeriodStart +
                 ", validPeriodEnd=" + validPeriodEnd +
-                ", title='" + title + '\'' +
+                ", addressId=" + addressId +
                 '}';
     }
 }

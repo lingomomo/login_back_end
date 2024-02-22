@@ -28,7 +28,7 @@ public class AddressServiceImpl implements AddressService {
         if (addressList!=null){
             for (Address address:addressList) {
                 AddressOptions option = new AddressOptions();
-                option.setId(address.getId());
+                option.setId(address.getAddressId());
                 System.out.println(option);
                 option.setTitle(address.getAddress());
 //            再帰のメソッドを使用する

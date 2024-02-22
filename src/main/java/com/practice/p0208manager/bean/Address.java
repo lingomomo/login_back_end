@@ -1,16 +1,16 @@
 package com.practice.p0208manager.bean;
 
 public class Address {
-    private int id;
+    private int addressId;
     private String address;
     private Integer parentId;
 
-    public int getId() {
-        return id;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     public String getAddress() {
@@ -32,7 +32,7 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "id=" + id +
+                "addressId=" + addressId +
                 ", address='" + address + '\'' +
                 ", parentId=" + parentId +
                 '}';

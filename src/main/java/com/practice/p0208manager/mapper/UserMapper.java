@@ -20,5 +20,5 @@ public interface UserMapper {
      * @param limits　入力された項目
      * @return　ユーザ情報コレクション、またはnull
      */
-    List<User> getUserByLimits(Limits limits);
+    List<User> getUser(Limits limits);
 }

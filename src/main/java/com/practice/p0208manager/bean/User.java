@@ -7,23 +7,15 @@ import java.util.Date;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
-    private Integer loginId;
+    private int loginId;
     private String userName;
     private String roleName;
-    private String password;
-    private String address;
-    private Integer tel;
-    private Integer userRoleCode;
-    private Date validPeriodStart;
-    private Date validPeriodEnd;
-    private Date registrationDate;
-    private Date updateDate;
 
-    public Integer getLoginId() {
+    public int getLoginId() {
         return loginId;
     }
 
-    public void setLoginId(Integer loginId) {
+    public void setLoginId(int loginId) {
         this.loginId = loginId;
     }
 
@@ -59,19 +51,19 @@ public class User {
         this.address = address;
     }
 
-    public Integer getTel() {
+    public int getTel() {
         return tel;
     }
 
-    public void setTel(Integer tel) {
+    public void setTel(int tel) {
         this.tel = tel;
     }
 
-    public Integer getUserRoleCode() {
+    public int getUserRoleCode() {
         return userRoleCode;
     }
 
-    public void setUserRoleCode(Integer userRoleCode) {
+    public void setUserRoleCode(int userRoleCode) {
         this.userRoleCode = userRoleCode;
     }
 
@@ -106,6 +98,15 @@ public class User {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
+
+    private String password;
+    private String address;
+    private int tel;
+    private int userRoleCode;
+    private Date validPeriodStart;
+    private Date validPeriodEnd;
+    private Date registrationDate;
+    private Date updateDate;
 
     @Override
     public String toString() {
