@@ -1,11 +1,15 @@
 package com.practice.p0208manager.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Limits {
     private int loginId;
     private String roleName;
+    @JsonFormat(timezone = "Asia/Tokyo")
     private Date validPeriodStart;
+    @JsonFormat(timezone = "Asia/Tokyo")
     private Date validPeriodEnd;
     private int addressId;
 

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 
 @Service
@@ -44,7 +45,6 @@ public class UserServiceImpl implements UserService {
         if (list==null){
             throw new RuntimeException("ユーザは存在しません。");
         }
-        System.out.println(list+"bbbbbbbbbbbbbbbbbbbbbbbuuuuuuuuuuuuuuu");
         return list;
     }
 }
